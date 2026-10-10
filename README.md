@@ -2,6 +2,8 @@
 
 A fast, interactive, client-side web application for flashcard-based study and self-assessment, covering JavaScript, Web APIs, and CSS concepts.
 
+🌐 **Live Demo**: [https://flipstudy-three.vercel.app/](https://flipstudy-three.vercel.app/)
+
 ---
 
 ## ✨ Features
