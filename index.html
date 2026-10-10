@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ============================================================
+       META & TITLE
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="FlipStudy – a single-page flashcard app covering JavaScript, Web APIs, and CSS fundamentals." />
+  <title>FlipStudy – Flashcard Study App</title>
+
+  <!-- External font: Inter via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Application stylesheet (presentation layer) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       SITE HEADER – branding + progress summary
+       ============================================================ -->
+  <header id="site-header">
+    <div class="header-inner">
+      <!-- App brand -->
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">⚡</span>
+        <h1 class="brand-name">FlipStudy</h1>
+      </div>
+
+      <!-- Live progress counter – updated by script.js -->
+      <section id="progress-section" aria-label="Study progress">
+        <p class="progress-label">Progress</p>
+        <p class="progress-count" id="progress-display">0 / 12 known</p>
+      </section>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT AREA
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ----------------------------------------------------------
+         CONTROLS BAR  –  category filters + status filters + shuffle
+         ---------------------------------------------------------- -->
+    <section id="controls-section" aria-label="Deck controls">
+
+      <!-- Category filter buttons (All + one per subject) -->
+      <!-- Populated dynamically by script.js -->
+      <div class="filter-group" id="category-filters" role="group" aria-label="Filter by category">
+        <!-- JS inserts buttons here -->
+      </div>
+
+      <!-- Status filter buttons -->
+      <div class="filter-group" id="status-filters" role="group" aria-label="Filter by status">
+        <button class="filter-btn status-filter active" data-status="all"   id="filter-all">All Cards</button>
+        <button class="filter-btn status-filter"        data-status="known"  id="filter-known">Known</button>
+        <button class="filter-btn status-filter"        data-status="review" id="filter-review">Needs Review</button>
+      </div>
+
+      <!-- Shuffle button -->
+      <button class="btn-shuffle" id="shuffle-btn" aria-label="Shuffle the card deck">
+        <span aria-hidden="true">🔀</span> Shuffle
+      </button>
+
+    </section>
+
+    <!-- ----------------------------------------------------------
+         FLASHCARD DECK  –  cards injected here by script.js
+         ---------------------------------------------------------- -->
+    <section id="deck-section" aria-label="Flashcard deck">
+      <!-- JS builds <article> elements and appends them here -->
+    </section>
+
+    <!-- ----------------------------------------------------------
+         EMPTY STATE  –  shown when no cards match active filters
+         ---------------------------------------------------------- -->
+    <section id="empty-state" aria-live="polite" hidden>
+      <p class="empty-icon" aria-hidden="true">🃏</p>
+      <p class="empty-message">No cards match the current filter.</p>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER
+       ============================================================ -->
+  <footer id="site-footer">
+    <p>FlipStudy &mdash; Click a card to flip it &middot; Mark known or for review &middot; Shuffle anytime</p>
+  </footer>
+
+  <!-- Application behaviour (ES6 module) -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>

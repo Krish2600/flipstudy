@@ -1,0 +1,15 @@
+{
+  "name": "flipstudy-flashcards",
+  "version": "1.0.0",
+  "description": "FlipStudy - Interactive Flashcard Study Application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}
